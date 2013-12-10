@@ -3,28 +3,28 @@ class Product:
     id = ""
     quantityOnHand = 0
 
-    def __init__(self, price, id, initialQuantity)
+    def __init__(self, price, id, initialQuantity):
         self.price = price
         self.id = id
-        self.quantityOnHand = initialQUantity
+        self.quantityOnHand = initialQuantity
 
-    def setPrice(self, price)
+    def setPrice(self, price):
         self.price = price
 
-    def getPrice(self)
+    def getPrice(self):
         return self.price
 
-    def setId(self, id)
+    def setId(self, id):
         self.id = id
 
-    def getId(self)
+    def getId(self):
         return self.id
 
-    def getQuantityOnHand(self)
+    def getQuantityOnHand(self):
         return self.quantityOnHand
 
-    def addUnits(self, quantityAdded)
+    def addUnits(self, quantityAdded):
         self.quantityOnHand += quantityAdded
 
-    def removeUnits(self, quantityRemoved)
+    def removeUnits(self, quantityRemoved):
         self.quantityOnHand -= quantityRemoved
