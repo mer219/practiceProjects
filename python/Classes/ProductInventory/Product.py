@@ -9,13 +9,13 @@ class Product:
         self.quantityOnHand = initialQuantity
 
     def setPrice(self, price):
-        self.price = price
+        if price >= 0:
+            self.price = price
+        else:
+            raise Exception("Price cannot be negative")
 
     def getPrice(self):
         return self.price
-
-    def setId(self, id):
-        self.id = id
 
     def getId(self):
         return self.id
@@ -27,4 +27,7 @@ class Product:
         self.quantityOnHand += quantityAdded
 
     def removeUnits(self, quantityRemoved):
-        self.quantityOnHand -= quantityRemoved
+        if quantityRemove <= self.quantityOnHand:
+            self.quantityOnHand -= quantityRemoved
+        else:
+            raise Exception("Quantity on hand cannot be negative")

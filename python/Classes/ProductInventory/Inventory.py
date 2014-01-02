@@ -1,14 +1,25 @@
 class Inventory:
-    product = dict()
+    productList = dict()
+
+    def productExists(self, productName):
+        if productName in self.productList:
+            return True
+        else:
+            return False
 
     def addProduct(self, newProduct):
         productName = newProduct.getId()
-        self.product[productName] = newProduct
+        if not self.productExists(productName):
+            self.productList[productName] = newProduct
+        else:
+            raise Exception("Unable to add product.  Product already exists")
 
     def removeProduct(self, productName):
-        del self.product[productName]
+       if self.productExists(productName):
+            del self.productList[productName]
+       else:
+            raise Exception("Unable to delete product.  Product not in inventory") 
 
     def printProductList(self):
-        for thisProductName in self.product.keys():
-            #print self.product[thisProductName].getId() + ": #" + self.product[thisProductName].getQuantityOnHand() + " $" + self.product[thisProductName].getPrice()
-            print '{}: #{} ${}'.format(self.product[thisProductName].getId(), self.product[thisProductName].getQuantityOnHand(), self.product[thisProductName].getPrice())
+        for thisProductName in self.productList.keys():
+            print '{}: #{} ${}'.format(self.productList[thisProductName].getId(), self.productList[thisProductName].getQuantityOnHand(), self.productList[thisProductName].getPrice())
