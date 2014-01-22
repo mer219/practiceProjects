@@ -7,14 +7,14 @@ class Inventory:
         else:
             return False
 
-    def addProduct(self, newProduct):
+    def createProduct(self, newProduct):
         productName = newProduct.getId()
         if not self.productExists(productName):
             self.productList[productName] = newProduct
         else:
             raise Exception("Unable to add product.  Product already exists")
 
-    def removeProduct(self, productName):
+    def deleteProduct(self, productName):
        if self.productExists(productName):
             del self.productList[productName]
        else:
