@@ -1,6 +1,8 @@
+import os
+
 class Dialogue:
 
-    def promtMainMenu(self):
+    def promptMainMenu(self):
         print "Please select an action."
         print ""
         print "1. list products"
@@ -9,6 +11,7 @@ class Dialogue:
         print "4. change product price"
         print "5. add product units"
         print "6. remove product units"
+        print "7. exit"
 
     def promptForProduct(self):
         print "Which product would you like to update?"
@@ -43,5 +46,17 @@ class Dialogue:
     def promptForChagedPrice(self):
         print "Please enter the new price of the product"
 
+    def promptAddUnitsProductName(self):
+        print "Please enter the name of the product you will be adding units for"
+    
+    def promptNumberOfUnitsToAdd(self):
+        print "How many units are being added"
+
+    def promptRemoveUnitsProductName(self):
+        print "Please enter the name of the product you will be removing units for"
+    
+    def promptNumberOfUnitsToRemove(self):
+        print "How many units are being removed"
+ 
     def clear(self):
         os.system("clear")

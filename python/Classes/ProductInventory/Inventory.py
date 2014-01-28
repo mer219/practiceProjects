@@ -20,6 +20,15 @@ class Inventory:
        else:
             raise Exception("Unable to delete product.  Product not in inventory") 
 
+    def increaseProductSupply(self, productName, quantityIncreased):
+       self.productList[productName].addUnits(quantityIncreased)
+
+    def decreaseProductSupply(self, productName, quantityDecreased):
+       self.productList[productName].removeUnits(quantityDecreased)
+
+    def changeProductPrice(self, productName, newPrice):
+       self.productList[productName].setPrice(newPrice)
+
     def printProductList(self):
         for thisProductName in self.productList.keys():
             print '{}: #{} ${}'.format(self.productList[thisProductName].getId(), self.productList[thisProductName].getQuantityOnHand(), self.productList[thisProductName].getPrice())

@@ -1,10 +1,7 @@
 #! /usr/bin/python
 
-import Inventory
-import Product
+import Menu
 
-inventory = Inventory.Inventory()
+menu = Menu.Menu()
+menu.mainMenu()
 
-inventory.addProduct(Product.Product(100, "tennis balls", 5))
-
-inventory.printProductList()
