@@ -43,7 +43,7 @@ class Menu:
         self.dialogue.clear()
         self.dialogue.promptNewProductPrice()
         newProductPrice = self.getNumericInput()
-        self.inventory.createProduct(Product.Product(newProductPrice, newProductName, newProductQuantity))
+        self.inventory.createProduct(Product.Product(newProductName, newProductPrice, newProductQuantity))
         self.mainMenu()
 
     def addProductUnits(self):

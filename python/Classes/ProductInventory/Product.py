@@ -3,7 +3,7 @@ class Product:
     id = ""
     quantityOnHand = 0
 
-    def __init__(self, price, id, initialQuantity):
+    def __init__(self, id, price, initialQuantity):
         self.price = price
         self.id = id
         self.quantityOnHand = initialQuantity

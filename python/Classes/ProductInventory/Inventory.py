@@ -21,10 +21,16 @@ class Inventory:
             raise Exception("Unable to delete product.  Product not in inventory") 
 
     def increaseProductSupply(self, productName, quantityIncreased):
-       self.productList[productName].addUnits(quantityIncreased)
+       if quantityIncreased > 0:
+           self.productList[productName].addUnits(quantityIncreased)
+       else:
+           raise Exception("Supply must increase by at least 1")
 
     def decreaseProductSupply(self, productName, quantityDecreased):
-       self.productList[productName].removeUnits(quantityDecreased)
+       if quantityDecreased > 0:
+           self.productList[productName].removeUnits(quantityDecreased)
+       else:
+           raise Exception("Supply must decrease by at least 1")
 
     def changeProductPrice(self, productName, newPrice):
        self.productList[productName].setPrice(newPrice)
