@@ -27,7 +27,7 @@ class Product:
         self.quantityOnHand += quantityAdded
 
     def removeUnits(self, quantityRemoved):
-        if quantityRemove <= self.quantityOnHand:
+        if quantityRemoved <= self.quantityOnHand:
             self.quantityOnHand -= quantityRemoved
         else:
             raise Exception("Quantity on hand cannot be negative")

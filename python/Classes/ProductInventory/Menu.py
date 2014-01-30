@@ -15,7 +15,7 @@ class Menu:
         self.mainMenuArray[4] = self.changeProductPrice
         self.mainMenuArray[5] = self.addProductUnits
         self.mainMenuArray[6] = self.removeProductUnits
-        self.mainMenuArray[6] = self.endProgram
+        self.mainMenuArray[7] = self.endProgram
 
     def startMenu(self):
         self.mainMenu()
@@ -59,7 +59,8 @@ class Menu:
         self.dialogue.clear()
         self.dialogue.promptRemoveUnitsProductName()
         productToUpdate = self.getProductNameInput()
-        promptNumberOfUnitsToRemove()
+        self.dialogue.clear()
+        self.dialogue.promptNumberOfUnitsToRemove()
         numberOfRemovedUnits = self.getNumericInput()
         self.inventory.decreaseProductSupply(productToUpdate, numberOfRemovedUnits)
         self.mainMenu()
@@ -68,7 +69,7 @@ class Menu:
         self.dialogue.clear()
         self.dialogue.promptDeleteProductName()
         productToBeDeleted = self.getProductNameInput()
-        self.invetory.deleteProduct(productToBeDeleted)
+        self.inventory.deleteProduct(productToBeDeleted)
         self.mainMenu()
 
     def changeProductPrice(self):

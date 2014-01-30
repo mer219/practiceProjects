@@ -43,7 +43,7 @@ class Dialogue:
     def promptNameOfProductForPriceChange(self):
         print "Please enter the name of the product you wish to change the price of"
 
-    def promptForChagedPrice(self):
+    def promptForChangedPrice(self):
         print "Please enter the new price of the product"
 
     def promptAddUnitsProductName(self):
