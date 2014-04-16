@@ -4,16 +4,16 @@ class Collatz:
         self.numberOfIterations = 0
         self.intermediaryResults = []
 
-    def evaluateConjecture(self, inputNumber):
-        if int(inputNumber) > 1:
+    def evaluateConjecture(self, numberToEvaluate):
+        result = 0
+        while int(numberToEvaluate) > 1:
             self.numberOfIterations += 1
-            result = 0
-            if self.numberIsOdd(inputNumber):
-                result = self.performOddProcessing(inputNumber)
+            if self.numberIsOdd(numberToEvaluate):
+                result = self.performOddProcessing(numberToEvaluate)
             else:
-                result = self.performEvenProcessing(inputNumber) 
+                result = self.performEvenProcessing(numberToEvaluate) 
             self.intermediaryResults.append(result)
-            self.evaluateConjecture(result)
+            numberToEvaluate = result
 
     def numberIsOdd(self, inputNumber):
         remainder = int(inputNumber) % 2
