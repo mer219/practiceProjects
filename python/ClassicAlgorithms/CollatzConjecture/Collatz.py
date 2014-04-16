@@ -3,14 +3,6 @@ class Collatz:
     def __init__(self):
         self.numberOfIterations = 0
         self.intermediaryResults = []
-        #self.calculateMaxOddValue()
-
-    def calculateMaxOddValue(self):
-        self.maxOddValue = ~int(0)
-        self.maxOddValue = self.maxOddValue >> 2
-        if not self.numberIsOdd(self.maxOddValue):
-            self.maxOddValue -= 1 
-        print self.maxOddValue
 
     def evaluateConjecture(self, inputNumber):
         if int(inputNumber) > 1:
