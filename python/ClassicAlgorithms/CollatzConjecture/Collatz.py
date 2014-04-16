@@ -1,16 +1,26 @@
 class Collatz:
-    numberOfIterations = 0
-    intermediaryResults = []
+
+    def __init__(self):
+        self.numberOfIterations = 0
+        self.intermediaryResults = []
+        #self.calculateMaxOddValue()
+
+    def calculateMaxOddValue(self):
+        self.maxOddValue = ~int(0)
+        self.maxOddValue = self.maxOddValue >> 2
+        if not self.numberIsOdd(self.maxOddValue):
+            self.maxOddValue -= 1 
+        print self.maxOddValue
 
     def evaluateConjecture(self, inputNumber):
-        self.numberOfIterations += 1
-        result = 0
-        if self.numberIsOdd(inputNumber):
-            result = self.performOddProcessing(inputNumber)
-        else:
-            result = self.performEvenProcessing(inputNumber) 
-        self.intermediaryResults.append(result)
-        if result > 1:
+        if int(inputNumber) > 1:
+            self.numberOfIterations += 1
+            result = 0
+            if self.numberIsOdd(inputNumber):
+                result = self.performOddProcessing(inputNumber)
+            else:
+                result = self.performEvenProcessing(inputNumber) 
+            self.intermediaryResults.append(result)
             self.evaluateConjecture(result)
 
     def numberIsOdd(self, inputNumber):
