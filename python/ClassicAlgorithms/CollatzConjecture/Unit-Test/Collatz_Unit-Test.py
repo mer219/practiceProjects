@@ -31,5 +31,17 @@ class CollatzTestClass(unittest.TestCase):
         self.collatz.evaluateConjecture(5)
         assert self.collatz.getNumberOfIterations() == 5
 
+    def testgetNumberOfIterations(self):
+        self.collatz.evaluateConjecture(2)
+        assert self.collatz.getNumberOfIterations() == 1
+
+    def testPerformOddProcessing(self):
+        result = self.collatz.performOddProcessing(3)
+        assert result == 10
+
+    def testPerformEvenProcessing(self):
+        result = self.collatz.performEvenProcessing(4)
+        assert result == 2
+
 if __name__ == "__main__":
     unittest.main()
